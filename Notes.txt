@@ -1,0 +1,62 @@
+ETL:- Extract Load Transform
+
+Extraction:- 
+Pull
+Full
+File Parsing
+
+Transformation-
+ALL
+
+Load:-
+Batch Processing
+Full Load (Truncate and instert)
+SCD1 overwriting
+
+Data Architecture:
+
+Data Warehouse:- more standard and organised Data
+Data Lake:- Is unstructured can have multiple types of data and used for
+more advanced analysis and learning
+Data Lakehouse:- Structured way of creating Data Lake
+Data Mesh:- Decentralized management
+
+
+DWH:----
+Inmon
+
+Source->Stage->EDW(Enterprise data warehouse 3NF(normalizing data))-> Data marts
+
+Kimball
+
+Source->Data marts
+
+Data Vault
+
+Source-> EDW -> Data marts
+           |
+           \/
+    Raw Vault -> Business Vault
+
+Medallion Architecture*****
+
+Source->Bronze->Silver->Gold
+
+
+
+Bronze:-                                                    Silver                                  Gold
+Definition:- Raw and unprocessed data as-is from sources    Clean and standardised data     Business ready data
+Objective:- Tracebility and Debugging                       Prepare Data for Analysis       Provide data to be consumed for reporting and Analytics
+Object Type:- Tables                                             Tables                          Views
+Load Method:- Full Load                                         Full Load                       None
+Data Transformation:- None                                      Data cleaning standardization   Integration Aggregation,B logic and rules
+Modelling:- None                                                    None                               Start Schema ,Aggregated obj ,Flat tables                                 
+
+
+
+
+
+
+Separation of concerns
+
+                                                                    
