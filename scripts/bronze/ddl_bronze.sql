@@ -13,8 +13,7 @@ CREATE TABLE bronze.crm_cust_info(
     cst_gndr VARCHAR(50),
     cst_create_date DATE
 );
-IF OBJECT_ID('bronze.crm_prd_info', 'U') IS NOT NULL
-    DROP TABLE bronze.crm_prd_info;
+IF OBJECT_ID('bronze.crm_prd_info', 'U') IS NOT NULL DROP TABLE bronze.crm_prd_info;
 CREATE TABLE bronze.crm_prd_info(
     prd_id INT,
     prd_key VARCHAR(50),
