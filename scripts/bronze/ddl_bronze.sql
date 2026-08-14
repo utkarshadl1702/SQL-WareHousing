@@ -1,6 +1,9 @@
 
 /* CRM */
+/*Follow the naming convention to create tables*/
 
+IF OBJECT_ID('bronze.crm_cust_info', 'U') IS NOT NULL
+    DROP TABLE bronze.crm_cust_info;
 CREATE TABLE bronze.crm_cust_info(
     cst_id INT,
     cst_key VARCHAR(50),
@@ -10,7 +13,9 @@ CREATE TABLE bronze.crm_cust_info(
     cst_gndr VARCHAR(50),
     cst_create_date DATE
 );
-CREATE TABLE bronze.prd_info(
+IF OBJECT_ID('bronze.crm_prd_info', 'U') IS NOT NULL
+    DROP TABLE bronze.crm_prd_info;
+CREATE TABLE bronze.crm_prd_info(
     prd_id INT,
     prd_key VARCHAR(50),
     prd_nm VARCHAR(100),
@@ -19,13 +24,16 @@ CREATE TABLE bronze.prd_info(
     prd_start_dt DATE,
     prd_end_dt DATE
 );
-CREATE TABLE bronze.sales_details(
-    sls_ord_num INT,
+
+
+DROP TABLE bronze.crm_sales_details;
+CREATE TABLE bronze.crm_sales_details(
+    sls_ord_num VARCHAR(50),
     sls_prd_key VARCHAR(50),
     sls_cust_id INT,
-    sls_order_dt DATE,
-    sls_ship_dt DATE,
-    sls_due_dt DATE,
+    sls_order_dt INT,
+    sls_ship_dt INT,
+    sls_due_dt INT,
     sls_sales DECIMAL(10,2),
     sls_quantity INT,
     sls_price DECIMAL(10,2)
@@ -33,10 +41,30 @@ CREATE TABLE bronze.sales_details(
 
 
 /*ERP*/
-CREATE TABLE bronze.CUST_AZ12(
-    CID INT,
-    BDATE DATE,
+
+DROP TABLE bronze.erp_cust_info;
+CREATE TABLE bronze.erp_cust_info(
+    CID VARCHAR,
+    BDATE VARCHAR(10),
     GEN VARCHAR(10)
 );
+
+-- IF OBJECT_ID('bronze.erp_loc_info', 'U') IS NOT NULL
+DROP TABLE bronze.erp_loc_info;
+CREATE TABLE bronze.erp_loc_info(
+    CID VARCHAR,
+    CNTRY VARCHAR(50)
+);  
+
+
+DROP TABLE bronze.erp_cat_info;
+CREATE TABLE bronze.erp_cat_info(
+    ID VARCHAR(50),
+    CAT VARCHAR(50),
+    SUBCAT VARCHAR(50),
+    MAINTENANCE VARCHAR(50)
+);
+
+
 
 

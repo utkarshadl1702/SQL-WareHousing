@@ -1,5 +1,11 @@
--- Active: 1786655839592@@127.0.0.1@5432@postgres
--- Active: 1786655839592@@127.0.0.1@5432@datawarehouse1786655839592@@127.0.0.1@5432@datawarehouse1786655839592@@127.0.0.1@5432@postgres@public1786655839592@@127.0.0.1@5432@postgres
+
+
+/*
+Create database and schemas for Data WareHouse
+*/
+
+
+
 USE master;
 GO
 CREATE DATABASE DataWareHouse;
