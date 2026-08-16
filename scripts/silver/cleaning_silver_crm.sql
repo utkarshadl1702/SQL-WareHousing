@@ -162,7 +162,7 @@ OR sls_order_dt>20231231
 ;
 
 
-
+INSERT INTO silver.crm_sales_details
 SELECT
 sls_ord_num,
 sls_prd_key,
@@ -180,7 +180,8 @@ ELSE CAST(CAST(sls_due_dt AS VARCHAR) AS DATE) END AS sales_due_dt,
 CASE WHEN sls_sales IS NULL OR sls_sales<=0 OR sls_sales!=sls_quantity*sls_price THEN sls_quantity*ABS(sls_price)
  ELSE sls_sales
 END AS sales_sales,
-sls_sales,
+
+
 sls_quantity,
 CASE WHEN sls_price IS NULL OR sls_price<=0
     THEN sls_sales/NULLIF(sls_quantity,0)
@@ -206,3 +207,6 @@ OR sls_sales!=sls_quantity*sls_price
 -- - if sales<=0 or null then derive using quantity and price
 -- - if price=0 or null the do it with sales and quantity
 -- - if price <0 convert to +ve 
+
+-- LOOKUP
+SELECT * FROM silver.crm_sales_details
