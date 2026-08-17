@@ -45,7 +45,7 @@ CREATE TABLE bronze.crm_sales_details(
 DROP TABLE bronze.erp_cust_info;
 CREATE TABLE bronze.erp_cust_info(
     CID VARCHAR,
-    BDATE VARCHAR(10),
+    BDATE DATE,
     GEN VARCHAR(10)
 );
 

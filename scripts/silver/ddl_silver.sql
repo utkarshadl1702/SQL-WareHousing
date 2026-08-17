@@ -50,7 +50,7 @@ CREATE TABLE silver.crm_sales_details(
 DROP TABLE silver.erp_cust_info;
 CREATE TABLE silver.erp_cust_info(
     CID VARCHAR,
-    BDATE VARCHAR(10),
+    BDATE DATE,
     GEN VARCHAR(10),
     dwh_create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
