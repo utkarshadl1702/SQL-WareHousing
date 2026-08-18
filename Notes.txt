@@ -72,6 +72,28 @@ Physical:- store actual data in craeted tables during logical step
 
 
 
+For data analytics we need some schemas
 
+Star schema
 
-                                                                    
+            Dim             Dim
+
+    DIM            FACT            Dim
+
+                   Dim
+Snowflake schema
+                
+                   Dim   
+                    /\
+                    |
+            Dim   <-  Dim                  Dim   
+                                            /\
+                                            |
+                                 Dim   <-  Dim 
+
+                        FACT
+
+Dimension:- Descriptive info  that give context of data
+Facts:- Quantitative representation of events
+
+                                                                
