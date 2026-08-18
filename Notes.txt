@@ -59,4 +59,19 @@ Modelling:- None                                                    None        
 
 Separation of concerns
 
+
+
+Data models:-
+COnverting Raw data into something consumer friendly
+
+Conceptual:- base level using usually 1-2 columns
+
+Logical:- more detailed eg (PK,FK,etc) not worried how to store data
+
+Physical:- store actual data in craeted tables during logical step
+
+
+
+
+
                                                                     
