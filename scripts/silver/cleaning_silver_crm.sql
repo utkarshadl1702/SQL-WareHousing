@@ -1,5 +1,8 @@
 
-
+CREATE OR REPLACE PROCEDURE silver.load_silver_crm()
+LANGUAGE plpgsql
+AS $$
+BEGIN
 
 ----------------------------------CRM----------------------------------------------
         ------------------------crm_cust_info------------------------
@@ -94,6 +97,7 @@ SELECT prd_id, COUNT(*) FROM bronze.crm_prd_info GROUP BY prd_id HAVING COUNT(*)
 
 
 
+TRUNCATE TABLE silver.crm_prd_info;
 INSERT INTO silver.crm_prd_info
 SELECT
 prd_id
@@ -128,7 +132,7 @@ bronze.crm_prd_info
 
 -- Date check
 SELECT*FROM silver.crm_prd_info
-WHERE prd_end_dt<prd_start_dt
+WHERE prd_end_dt<prd_start_dtl;
 
 
 
@@ -162,6 +166,8 @@ OR sls_order_dt>20231231
 ;
 
 
+
+TRUNCATE TABLE silver.crm_sales_details;
 INSERT INTO silver.crm_sales_details
 SELECT
 sls_ord_num,
@@ -188,7 +194,7 @@ CASE WHEN sls_price IS NULL OR sls_price<=0
     ELSE sls_price END AS sls_price
 
 
-FROM bronze.crm_sales_details
+FROM bronze.crm_sales_details;
 
 
 
@@ -200,7 +206,7 @@ OR sls_price<0
 OR sls_sales IS NULL
 OR sls_quantity IS NULL
 OR sls_price IS NULL
-OR sls_sales!=sls_quantity*sls_price
+OR sls_sales!=sls_quantity*sls_price;
 
 
 -- Rules assumed to be applied:-
@@ -209,4 +215,8 @@ OR sls_sales!=sls_quantity*sls_price
 -- - if price <0 convert to +ve 
 
 -- LOOKUP
-SELECT * FROM silver.crm_sales_details
+-- SELECT * FROM silver.crm_sales_details
+
+
+END;
+$$;

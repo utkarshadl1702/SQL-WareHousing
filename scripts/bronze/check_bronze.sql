@@ -1,0 +1,2 @@
+
+SELECT * FROM bronze.crm_cust_info
