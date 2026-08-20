@@ -54,5 +54,5 @@ These are designed for reporting, KPI analysis, and BI consumption.
 
 ## Notes
 
-This project is intended as a learning and demonstration warehouse implementation using PostgreSQL-friendly SQL patterns.
+Data warehouse implementation using PostgreSQL.
 
