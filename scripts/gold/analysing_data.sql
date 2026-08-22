@@ -1,6 +1,5 @@
 -- Avoid inner join as it might lose customers (data)
 ----------------------------Customer dimension-----------------------------
-
 CREATE VIEW gold.dim_customers AS
 -- It is a dimension table as it is telling the information not the events or facts
 SELECT 
