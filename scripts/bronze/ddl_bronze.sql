@@ -57,6 +57,7 @@ CREATE TABLE bronze.erp_loc_info(
 );  
 
 
+
 DROP TABLE bronze.erp_cat_info;
 CREATE TABLE bronze.erp_cat_info(
     ID VARCHAR(50),
